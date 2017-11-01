@@ -10,6 +10,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 import ua.kiev.softtouch.configurations.AppMvcConfig;
+import ua.model.softtouch.configurations.ModelConfiguration;
 
 
 public class Initializer implements WebApplicationInitializer{
@@ -18,6 +19,7 @@ public class Initializer implements WebApplicationInitializer{
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
 		ctx.register(AppMvcConfig.class);
+		ctx.register(ModelConfiguration.class);
 		servletContext.addListener(new ContextLoaderListener(ctx));
 		ctx.setServletContext(servletContext);
 		Dynamic servlet = servletContext.addServlet("appServlet", new DispatcherServlet(ctx));

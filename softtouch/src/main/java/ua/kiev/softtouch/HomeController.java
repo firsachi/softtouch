@@ -11,6 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ua.model.softtouch.entity.User;
+
+
+
 /**
  * Handles requests for the application home page.
  */
