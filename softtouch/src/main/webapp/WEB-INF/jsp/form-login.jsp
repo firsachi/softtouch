@@ -20,6 +20,6 @@
     				</div>
   				</div>
 
-  				<button class="button expanded">Sign Up</button>
+  				<input class="button expanded" type="submit" value="Login">
   				
 			</form>
