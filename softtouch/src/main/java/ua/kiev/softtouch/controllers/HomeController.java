@@ -1,4 +1,4 @@
-package ua.kiev.softtouch;
+package ua.kiev.softtouch.controllers;
 
 import java.text.DateFormat;
 import java.util.Date;
