@@ -10,6 +10,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 		<style>
+			body { background: url(resources/computer-code.jpg); }
 
 			form .form-icons {
   				text-align: center;
@@ -32,16 +33,22 @@
   				color: white;
   				width: 1rem;
 			}
+			
+			.color{
+				border-color: #1779ba;
+				background-color: #1779ba;
+			}
 		</style>
 	</head>
 	
 	<body>
 		<div  class="row">
-			<div style=" margin-top: 10%" class="large-6 large-centered columns callout ">
+			<div style=" margin-top: 10%" class="large-6 columns large-centered callout ">
 				<%@include file="../jsp/form-login.jsp" %>
 			</div>
 		</div>
 		
+
 	</body>
 
 </html>
