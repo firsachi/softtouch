@@ -2,22 +2,23 @@ package ua.kiev.softtouch.configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+import ua.kiev.softtouch.service.ServiceAuthenticationProvider;
 
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
-    private AuthenticationProvider tokenAuthentication;
+    private ServiceAuthenticationProvider serviceAuthenticationProvider;
 	
 	@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.authenticationProvider(tokenAuthentication);
+		auth.authenticationProvider(serviceAuthenticationProvider);
     }
 	
 	@Override
