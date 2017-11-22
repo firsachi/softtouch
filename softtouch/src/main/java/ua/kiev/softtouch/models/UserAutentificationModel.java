@@ -24,6 +24,10 @@ public class UserAutentificationModel implements UserDetails{
 		super();
 		this.user = user;
 	}
+	
+	public String getCompanyName() {
+		return user.getCompanyName();
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ua.kiev.softtouch.models.UserAutentificationModel;
 
 @Controller
-@RequestMapping(value = "/cabinet")
-public class CabinetController {
+@RequestMapping(value = "orders-client")
+public class OrderClient {
 	
 	@RequestMapping
 	private String pageCabinet(Model model, Authentication authentication) {
 		UserAutentificationModel user =  (UserAutentificationModel) authentication.getPrincipal();
 		model.addAttribute("costumer", user.getCompanyName());
-		return "cabinet";
+		return "orders-client";
 	}
 
 }
