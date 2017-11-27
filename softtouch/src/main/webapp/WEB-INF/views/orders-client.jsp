@@ -17,11 +17,19 @@
 		<%@include file="../jsp/nav-cabinet.jsp" %>
 		<br>
 		<div class="row small-up-2 medium-up-3 large-up-6">
+			
+			<div class="column">
+				<img class="thumbnail" src="<c:url value="/resources/img/windows.png"/>">
+				<h5>Антивірус</h5>
+				<a href="#" class="button small expanded hollow">Замовити</a>
+			</div>
+			
 			<div class="column">
 				<img class="thumbnail" src="<c:url value="/resources/img/eset.jpg"/>">
 				<h5>Антивірус</h5>
 				<a href="#" class="button small expanded hollow">Замовити</a>
-			</div>	
+			</div>
+				
 		</div>
 
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

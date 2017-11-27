@@ -1,6 +1,8 @@
 package ua.kiev.softtouch.models;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +12,11 @@ import ua.kiev.model.entities.User;
 
 @Component
 public class UserAutentificationModel implements UserDetails{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -427677379141817633L;
 	
 	private User user;
 	
@@ -31,7 +38,9 @@ public class UserAutentificationModel implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		authorities.add(new Role(user.getRole().getNameRole()));
+		return authorities;
 	}
 
 	@Override
@@ -56,13 +65,11 @@ public class UserAutentificationModel implements UserDetails{
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

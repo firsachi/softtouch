@@ -26,10 +26,8 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		System.out.println(1);
         http
             .authorizeRequests()
-            	.antMatchers("/").permitAll()
-            	.antMatchers("/registration", "/addUser").permitAll()
-            	.antMatchers("/resources/**").permitAll()
-            	.antMatchers("/home/**").access("hasRole('user')")
+            	.antMatchers("/", "/home", "/resources/**").permitAll()
+            	.antMatchers("/cabinet/**").access("hasAuthority('costumer')")
             	.anyRequest().authenticated()
                 .and()
             .formLogin()

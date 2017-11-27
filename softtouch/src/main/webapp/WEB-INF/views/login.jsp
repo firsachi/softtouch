@@ -1,54 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page session="false" %>
+<html class="" lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>login page</title>
-		<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-		<style>
-			body { background: url(resources/computer-code.jpg); }
-
-			form .form-icons {
-  				text-align: center;
-			}
-
-			form .form-icons h4 {
-  				margin-bottom: 1rem;
-				}
-
-			form .form-icons .input-group-label {
-  				background-color: #1779ba;
-  				border-color: #1779ba;
-			}
-
-			form .form-icons .input-group-field {
-  				border-color: #1779ba;
-			}
-
-			form .form-icons .fa {
-  				color: white;
-  				width: 1rem;
-			}
-			
-			.color{
-				border-color: #1779ba;
-				background-color: #1779ba;
-			}
-		</style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome page</title>
+		<%@include file="../jsp/link-css.jsp" %>
+		<meta class="foundation-mq">
 	</head>
-	
+
+
+
 	<body>
-		<div  class="row">
-			<div style=" margin-top: 10%" class="large-6 columns large-centered callout ">
-				<%@include file="../jsp/form-login.jsp" %>
+
+		<br>
+		<div class="row">
+			
+
+			<div class="medium-6 large-6 large-centered columns">
+				<div class="callout secondary">
+					<%@include file="../jsp/form-login.jsp" %>
+				</div>
 			</div>
 		</div>
-		
 
+		<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+		<script type="text/javascript" src="<c:url value="/resources/js/vendor/jquery.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/resources/js/vendor/foundation.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/resources/js/vendor/what-input.js"/>"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      		ga('create', 'UA-2195009-2', 'auto');
+      		ga('send', 'pageview');
+      		ga('create', 'UA-2195009-27', 'auto', {name: "foundation"});
+      		ga('foundation.send', 'pageview');
+			$(document).foundation();
+    	</script>
+    	
 	</body>
-
+	
 </html>
