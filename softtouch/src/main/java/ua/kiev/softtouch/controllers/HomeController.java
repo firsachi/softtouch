@@ -1,9 +1,12 @@
 package ua.kiev.softtouch.controllers;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
-
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
+import ua.kiev.model.entities.User;
 import ua.kiev.softtouch.models.UserAutentificationModel;
 
 /**
@@ -34,7 +37,10 @@ public class HomeController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-		
+		Map<String, List<User>> users = new HashMap<>();
+		List<User> one = new ArrayList<>();
+		users.put("Апарат", one);
+		model.addAttribute("users", users);
 		model.addAttribute("serverTime", formattedDate );
 		model.addAttribute("user", new UserAutentificationModel());
 	

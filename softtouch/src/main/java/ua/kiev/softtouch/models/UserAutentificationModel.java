@@ -39,7 +39,7 @@ public class UserAutentificationModel implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new Role(user.getRole().getNameRole()));
+		authorities.add(new Role(user.getRole().getNameRole().name()));
 		return authorities;
 	}
 

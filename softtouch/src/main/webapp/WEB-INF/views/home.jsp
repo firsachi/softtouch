@@ -89,8 +89,9 @@
 		<div class="row">
 			<div class="medium-7 large-8 columns callout">
 				<h1>Апарат виконавчого органу Київської міської ради "Київської міської державної адміністрації"</h1>
+				  
 				<ul class="accordion" data-accordion data-allow-all-closed="true">
-  				
+  					<!--
   					<li class="accordion-item" data-accordion-item>
     					<a href="#" class="accordion-title">Апарат</a>
     					<div class="accordion-content" data-tab-content >
@@ -122,7 +123,9 @@
       						</ul>
     					</div>
   					</li>
+  					-->
 				</ul>
+				
 			</div>
 
 			<div class="medium-5 large-4 columns">
