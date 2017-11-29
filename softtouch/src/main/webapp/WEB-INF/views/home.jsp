@@ -91,6 +91,7 @@
 				<h1>Апарат виконавчого органу Київської міської ради "Київської міської державної адміністрації"</h1>
 				  
 				<ul class="accordion" data-accordion data-allow-all-closed="true">
+				
   					<!--
   					<li class="accordion-item" data-accordion-item>
     					<a href="#" class="accordion-title">Апарат</a>
