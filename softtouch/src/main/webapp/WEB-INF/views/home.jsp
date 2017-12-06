@@ -91,6 +91,19 @@
 				<h1>Апарат виконавчого органу Київської міської ради "Київської міської державної адміністрації"</h1>
 				  
 				<ul class="accordion" data-accordion data-allow-all-closed="true">
+				<c:forEach var="user" items="${ users }">
+					<li class="accordion-item" data-accordion-item>
+						<a href="#" class="accordion-title">${ user.nameRole }</a>
+						<div class="accordion-content" data-tab-content >
+      						<ul>
+      							<li><a href="cabinet">1. Відділ організаційного забезпечення діяльності Київського міського голови (патронатної служби).</a></li>
+      							<li>2. Управління аналітичного забезпечення Київського міського голови.</li>
+      							<li>3. Управління контрольно-аналітичного забезпечення першого заступника голови Київської міської державної</li>
+      							<li>${ info }</li>
+      						</ul>
+    					</div>
+					</li>
+				</c:forEach>
 				
   					<!--
   					<li class="accordion-item" data-accordion-item>
