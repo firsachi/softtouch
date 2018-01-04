@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page session="false" %>
-<html class="" lang="en">
+<html class="" lang="uk">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +10,11 @@
 		<%@include file="../jsp/link-css.jsp" %>
 		<meta class="foundation-mq">
 	</head>
-
-
-
+	
 	<body>
 
 		<br>
 		<div class="row">
-			
-
 			<div class="medium-6 large-6 large-centered columns">
 				<div class="callout secondary">
 					<%@include file="../jsp/form-login.jsp" %>
