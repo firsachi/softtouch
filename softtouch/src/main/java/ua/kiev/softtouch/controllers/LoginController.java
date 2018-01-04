@@ -10,19 +10,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ua.kiev.softtouch.models.UserAutentificationModel;
 
 @Controller
+
 public class LoginController {
 
-	@RequestMapping(value = "login")
-	private String pageLogin(Model model) {
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	private String pageLogin(Model model, @RequestParam(value = "error", required = false) String error) {
 		model.addAttribute("user", new UserAutentificationModel());
+		if(error != null){
+			model.addAttribute("error", "");
+		}
 		return "login";
 	}
 	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
     public String logoutPage(HttpServletRequest request, HttpServletResponse response){
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	if (auth != null){    
@@ -30,4 +36,6 @@ public class LoginController {
         }
     	return "redirect:/softtouch";
     }
+	
+
 }

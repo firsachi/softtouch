@@ -19,7 +19,7 @@ public class UserBaseService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserDao userDao = daoFactoryImpl.createUserDaoImpl();
-		UserAutentificationModel user = new UserAutentificationModel(userDao.byUser(username));
+		UserAutentificationModel user = new UserAutentificationModel(userDao.byEmail(username));
 		return user;
 	}
 

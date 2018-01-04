@@ -1,5 +1,6 @@
 package ua.kiev.softtouch.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -27,9 +28,9 @@ public class UserAutentificationModel implements UserDetails{
 		}
 	}
 
-	public UserAutentificationModel(User user) {
+	public UserAutentificationModel(Serializable serializable) {
 		super();
-		this.user = user;
+		this.user = (User) serializable;
 	}
 	
 	public String getCompanyName() {
@@ -39,7 +40,7 @@ public class UserAutentificationModel implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new Role(user.getRole().getNameRole().name()));
+		//authorities.add(new Role(user.getRole().getNameRole().name()));
 		return authorities;
 	}
 
