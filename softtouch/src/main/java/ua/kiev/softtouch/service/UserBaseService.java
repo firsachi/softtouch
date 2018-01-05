@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import ua.kiev.model.dao.DaoFactory;
 import ua.kiev.model.dao.UserDao;
+import ua.kiev.model.entities.User;
 import ua.kiev.softtouch.models.UserAutentificationModel;
 
 @Service
@@ -19,8 +20,14 @@ public class UserBaseService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserDao userDao = daoFactoryImpl.createUserDaoImpl();
-		UserAutentificationModel user = new UserAutentificationModel(userDao.byEmail(username));
-		return user;
+		User  user = userDao.byEmail(username);
+		if (null != user ) {
+			UserAutentificationModel moedl = new UserAutentificationModel();
+			moedl.setUsername(user.getUsername());
+			moedl.setPassword(user.getPassword());
+			return moedl;
+		}
+		return null;
 	}
 
 }

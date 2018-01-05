@@ -19,13 +19,16 @@ public class ServiceAuthenticationProvider implements AuthenticationProvider {
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String username = authentication.getName();
 		String password = authentication.getCredentials().toString();
-		UserDetails user = null;
+		
 		if (username == null 
 				|| username.length() == 0
 				|| password.length() <= 5) {
 			throw new BadCredentialsException("Username not found.");
-		}else {
-			user = userBaseService.loadUserByUsername(username);
+		}
+		
+		UserDetails user = userBaseService.loadUserByUsername(username);
+		if (null == user ) {
+			throw new BadCredentialsException("Username not found.");
 		}
 		
 		return new UsernamePasswordAuthenticationToken(user, password, user.getAuthorities());

@@ -1,6 +1,5 @@
 package ua.kiev.softtouch.models;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -8,8 +7,6 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import ua.kiev.model.entities.User;
 
 @Component
 public class UserAutentificationModel implements UserDetails{
@@ -19,39 +16,31 @@ public class UserAutentificationModel implements UserDetails{
 	 */
 	private static final long serialVersionUID = -427677379141817633L;
 	
-	private User user;
+	private String username;
 	
-	public UserAutentificationModel() {
-		super();
-		if (null == user) {
-			user = new User();
-		}
-	}
-
-	public UserAutentificationModel(Serializable serializable) {
-		super();
-		this.user = (User) serializable;
-	}
+	private String password;
+	
+	private String companyName;
 	
 	public String getCompanyName() {
-		return user.getCompanyName();
+		return companyName;
 	}
-
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		//authorities.add(new Role(user.getRole().getNameRole().name()));
-		return authorities;
+		return null;
 	}
 
 	@Override
 	public String getPassword() {
-		return user.getPassword();
+		return password;
 	}
 
 	@Override
 	public String getUsername() {
-		return user.getUsername();
+		return username;
 	}
 
 	@Override
@@ -73,5 +62,19 @@ public class UserAutentificationModel implements UserDetails{
 	public boolean isEnabled() {
 		return false;
 	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+
 
 }

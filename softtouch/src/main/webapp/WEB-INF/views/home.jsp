@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
 <html class="" lang="en">
 	<head>
@@ -88,7 +89,7 @@
 		<br>
 		<div class="row">
 			<div class="medium-7 large-8 columns callout">
-				<h1>Апарат виконавчого органу Київської міської ради "Київської міської державної адміністрації"</h1>
+				<h4><spring:message code="home.customerslist" /></h4>
 				  
 				<ul class="accordion" data-accordion data-allow-all-closed="true">
 				<c:forEach var="user" items="${ users }">
