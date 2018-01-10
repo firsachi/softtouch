@@ -5,7 +5,9 @@
 			<form:form modelAttribute="user" method="post" action="login" >
 				<div class="form-icons">
 					
-					<h4>Login</h4>
+					<div class="text-center">
+						<h4><spring:message code="title.login"/></h4>
+					</div>
 					
 					<c:if test = "${ error != null}">
 					<div class="alert callout" data-closable>
@@ -18,19 +20,22 @@
 					
 					<div class="input-group">
 						<span class="input-group-label">
-        					<i class="fa fa-envelope"></i>
+        					<i class="fi-mail"></i>
       					</span>
-      					<form:input type="email" path="username" class="input-group-field"/>
-      					<form:errors path="username"/>
+      					<spring:message code="inputs.email" var="email"/>
+      					<form:input type="email" path="username" class="input-group-field " placeholder="${ email }"/>
 					</div>
 					
 					<div class="input-group">
       					<span class="input-group-label">
-        					<i class="fa fa-key"></i>
+        					<i class="fi-key"></i>
       					</span>
-      					<form:password path="password" class="input-group-field"  placeholder="Password"/>
+      					<spring:message code="inputs.password" var="pass"/>
+      					<form:password path="password" class="input-group-field"  placeholder="${ pass }"/>
     				</div>
 					
 				</div>
-				<form:button class="button expanded color">Login</form:button>
+				<form:button class="button expanded color">
+					<spring:message code="buttons.submit"/>
+				</form:button>
 			</form:form>

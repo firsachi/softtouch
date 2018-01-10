@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,7 +26,9 @@ public class ServiceAuthenticationProvider implements AuthenticationProvider {
 				|| password.length() <= 5) {
 			throw new BadCredentialsException("Username not found.");
 		}
-		
+		Md5PasswordEncoder md = new Md5PasswordEncoder();
+		password = md.encodePassword(password, null);
+		System.out.println(password);
 		UserDetails user = userBaseService.loadUserByUsername(username);
 		if (null == user ) {
 			throw new BadCredentialsException("Username not found.");

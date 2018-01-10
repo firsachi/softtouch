@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page session="false" %>
 <html class="" lang="uk">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Welcome page</title>
+		<title><spring:message code="title.login"/></title>
 		<%@include file="../jsp/link-css.jsp" %>
 		<meta class="foundation-mq">
 	</head>
