@@ -27,6 +27,25 @@
 		<div class="row">
 			<div class="smail-12 large-8 columns">
 				<h4><spring:message code="home.customerslist"/></h4>
+				<ul class="accordion" data-accordion data-deep-link="true"
+					data-update-history="true" data-deep-link-smudge="true"
+					data-deep-link-smudge-delay="500" id="deeplinked-accordion">
+					
+					<c:forEach var="subdivision" items="${subdivisions}">
+					<li class="accordion-item is-active" data-accordion-item>
+						<span class="accordion-title">${subdivision.name}</span>
+						
+						<div class="accordion-content" data-tab-content id="deeplink1">
+						
+							<c:forEach var="company" items="${companies}">
+								<a href="login" >Accordion 1</a>
+							</c:forEach>
+							
+						</div>
+					</li>
+					</c:forEach>
+													
+				</ul>
 			</div>
 			<div class="smail-12 large-4 columns">
 				<%@include file="../jsp/form-login.jsp" %>

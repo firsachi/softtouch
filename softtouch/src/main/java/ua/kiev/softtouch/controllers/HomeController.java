@@ -1,14 +1,13 @@
 package ua.kiev.softtouch.controllers;
 
-import java.io.File;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -20,6 +19,7 @@ import ua.kiev.model.dao.RoleDao;
 import ua.kiev.model.dao.SubdivisionDao;
 import ua.kiev.model.entities.Role;
 import ua.kiev.model.entities.RoleEnum;
+import ua.kiev.model.entities.Subdivision;
 import ua.kiev.softtouch.models.UserAutentificationModel;
 
 /**
@@ -51,13 +51,13 @@ public class HomeController {
 			}
 		}
 		
-		System.out.println(new File(".").getAbsolutePath());
-		
 		String formattedDate = dateFormat.format(date);
-		SubdivisionDao subdivisionDao = daoFactory.createSubdivisionDao();
+		
 		model.addAttribute("users", null);
 		model.addAttribute("serverTime", formattedDate );
-		model.addAttribute("user", new UserAutentificationModel());	
+		model.addAttribute("user", new UserAutentificationModel());
+		SubdivisionDao subdivisionDao = daoFactory.createSubdivisionDao();
+		model.addAttribute("subdivisions", subdivisionDao.getAll());
 		return "home";
 	}
 	
