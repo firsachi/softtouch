@@ -36,8 +36,8 @@
 						<span class="accordion-title">${subdivision.name}</span>
 						
 						<div class="accordion-content" data-tab-content id="deeplink1">
-						
-							<c:forEach var="company" items="${companies}">
+							
+							<c:forEach var="company" items="${subdivision.getCompany()}">
 								<a href="login" >Accordion 1</a>
 							</c:forEach>
 							
