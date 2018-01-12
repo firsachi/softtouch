@@ -28,7 +28,7 @@ public class ServiceAuthenticationProvider implements AuthenticationProvider {
 		}
 		Md5PasswordEncoder md = new Md5PasswordEncoder();
 		password = md.encodePassword(password, null);
-		System.out.println(password);
+
 		UserDetails user = userBaseService.loadUserByUsername(username);
 		if (null == user ) {
 			throw new BadCredentialsException("Username not found.");
