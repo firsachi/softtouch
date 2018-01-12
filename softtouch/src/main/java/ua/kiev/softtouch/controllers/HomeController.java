@@ -58,7 +58,6 @@ public class HomeController {
 		model.addAttribute("user", new UserAutentificationModel());
 		SubdivisionDao subdivisionDao = daoFactory.createSubdivisionDao();
 		List<Subdivision> subdivisions  = subdivisionDao.getAll();
-		System.out.println(subdivisions.get(0).getCompany().get(0).getComapanyName());
 		model.addAttribute("subdivisions", subdivisions);
 		return "home";
 	}
