@@ -1,4 +1,4 @@
-package ua.kiev.softtouch.service;
+package ua.kiev.softtouch.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;

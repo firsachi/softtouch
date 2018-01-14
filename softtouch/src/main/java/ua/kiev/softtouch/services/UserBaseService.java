@@ -1,4 +1,4 @@
-package ua.kiev.softtouch.service;
+package ua.kiev.softtouch.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
