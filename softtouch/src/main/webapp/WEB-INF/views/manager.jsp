@@ -29,12 +29,7 @@
 						</div>
 					</div>
 					
-					<div class="callout primary">
-						<div class="row column">
-							
-							
-						</div>
-					</div>
+					<%@include file="../jsp/title-manager.jsp" %>
 					
 					<div class="row small-up-2 medium-up-3 large-up-4">
 						

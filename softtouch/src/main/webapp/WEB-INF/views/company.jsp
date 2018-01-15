@@ -35,6 +35,7 @@
 						<table>
 							<tr>
 								<th><spring:message code="table.number"/></th>
+								<th><spring:message code="table.namecompany"/></th>
 								<th><spring:message code="table.namesubdivision"/></th>
 								<th>
 									<ul class="menu float-right">
@@ -42,15 +43,15 @@
 									</ul>
 								</th>
 							</tr>
-							<c:forEach var="subdivision" items="${ subdivisions }" varStatus="counter">
+							<c:forEach var="company" items="${companies}" varStatus="counter">
 								<tr>
 									<td>${counter.index + 1}</td>
-									<td>${subdivision.name}
-									</td>
+									<td>${company.comapanyName}</td>
+									<td>${company.subdivision.name}</td>
 									<td>
 										<ul  class="menu small float-right">
-											<li><a href="/softtouch/manager/subdivision/edit/${subdivision.id}" class="hollow button tiny fi-pencil"></a></li>
-											<li style="margin-left: 2px;"><a href="/softtouch/manager/subdivision/disable/${subdivision.id}" class="alert hollow button tiny fi-x"></a></li>
+											<li><a href="/softtouch/manager/company/edit/${company.id}" class="hollow button tiny fi-pencil"></a></li>
+											<li style="margin-left: 2px;"><a href="/softtouch/manager/company/disable/${company.id}" class="alert hollow button tiny fi-x"></a></li>
 										</ul>
 									</td>
 								</tr>

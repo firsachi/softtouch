@@ -8,6 +8,11 @@
 							<a href="/softtouch/manager/"><spring:message code="menu.manager"/></a>
 						</li>
 						<li>
+							<a href="/softtouch/manager/company/">
+								<spring:message code="menu.manager.company"/>
+							</a>
+						</li>
+						<li>
 							<a href="/softtouch/manager/subdivision/">
 								<spring:message code="menu.manager.subdivision"/>
 							</a>

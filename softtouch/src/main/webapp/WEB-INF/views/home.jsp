@@ -9,6 +9,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><spring:message code="title.index"/></title>
 		<%@include file="../jsp/link-css.jsp" %>
+		<style type="text/css">
+			nav, .top-bar, .top-bar ul{	background-color: #2C3840; }
+			.menu .menu-text{ color: white; }
+		</style>
 	</head>
 	<body>
 		
@@ -36,7 +40,9 @@
 						<div class="accordion-content" data-tab-content>
 							
 							<c:forEach var="company" items="${subdivision.getCompany()}">
-								<a href="login" >${company.comapanyName}</a>
+								<c:if test="${company.disable == false}">
+									<a href="login" >${company.comapanyName}</a><br>
+								</c:if>
 							</c:forEach>
 							
 						</div>
