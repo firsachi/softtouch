@@ -16,22 +16,33 @@ public class SubdivisionService {
 	
 	@Autowired
 	private SubdivisionTransformer subdivisionTransformer;
+	
+	public SubdivisionDao getDao() {
+		return daoFactory.createSubdivisionDao();
+	}
 
 	public boolean isSubdivisionName(String name) {
-		SubdivisionDao subdivisionDao = daoFactory.createSubdivisionDao();
-		if (null == subdivisionDao.getName(name.trim())) {
+		if (null == getDao().getName(name.trim())) {
 			return false;
 		}
 		else {
 			return true;
 		}
-		
 	}
 
 	@Transactional
 	public void save(SubdivisionModel model) {
-		SubdivisionDao subdivisionDao = daoFactory.createSubdivisionDao();
-		subdivisionDao.create(subdivisionTransformer.modelEntity(model));
+		getDao().create(subdivisionTransformer.modelEntity(model));
+	}
+
+	@Transactional
+	public Object biId(int id) {
+		return subdivisionTransformer.entityModel(getDao().byId(id));
+	}
+
+	@Transactional
+	public void update(SubdivisionModel model) {
+		getDao().update(subdivisionTransformer.modelEntity(model));
 	}
 
 }

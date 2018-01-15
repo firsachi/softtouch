@@ -54,7 +54,7 @@
 									</td>
 									<td>
 										<ul  class="menu small float-right">
-											<li><a class="hollow button tiny fi-pencil"></a></li>
+											<li><a href="/softtouch/manager/subdivision/edit/${subdivision.id}" class="hollow button tiny fi-pencil"></a></li>
 											<li style="margin-left: 2px;"><a class="hollow button tiny fi-x"></a></li>
 										</ul>
 									</td>

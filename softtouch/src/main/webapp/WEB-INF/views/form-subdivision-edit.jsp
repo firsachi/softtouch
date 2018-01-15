@@ -15,13 +15,29 @@
 	<body><br>
 		<div class="row">
 			<div class="small-12 medium-12 large-6 large-centered columns">
-				<form:form method="post" action="add">
-					<div class="text-center">
+				<form:form modelAttribute="subdivision" method="post" action="/softtouch/manager/subdivision/update">
+					<div class="column row text-center">
 						<h4>${title}</h4>
 					</div>
 					<hr>
 					<%@include file="../jsp/form-subdivision.jsp" %>
-					<%@include file="../jsp/form-buttons.jsp" %>	
+					
+					<hr>
+					<div class="small-12 column row">
+						<div class="small-12 columns">
+							<div class="expanded button-group">
+								<a class="hollow button" href="/softtouch/manager/subdivision/">
+									<spring:message code="buttons.back" />
+								</a>
+								<button type="reset" class="hollow button">
+									<spring:message code="buttons.reset" />
+								</button>
+								<button type="submit" class="hollow button">
+									<spring:message code="buttons.submit"/>
+								</button>
+							</div>
+						</div>
+					</div>	
 				</form:form>
 			</div>
 		</div>
