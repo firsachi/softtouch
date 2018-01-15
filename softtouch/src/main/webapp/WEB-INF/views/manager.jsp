@@ -16,10 +16,7 @@
 			
 				<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas="" data-position="left" aria-hidden="true" data-offcanvas="3rv0tb-offcanvas">	
 					<div class="row column">
-						<br>
-						<ul>
-							<li>add subdivision</li>
-						</ul>
+						<%@include file="../jsp/menu-left-manager.jsp" %>
 					</div>
 				</div>
 				
@@ -40,30 +37,7 @@
 					</div>
 					
 					<div class="row small-up-2 medium-up-3 large-up-4">
-						<table>
-							<tr>
-								<th>id</th>
-								<th>name</th>
-								<th>
-									<ul class="menu float-right">
-										<li><a class="hollow button tiny fi-plus"></a></li>
-									</ul>
-								</th>
-							</tr>
-							<c:forEach var="subdivision" items="${ subdivisions }" varStatus="counter">
-								<tr>
-									<td>${counter.index + 1}</td>
-									<td>${subdivision.name}
-									</td>
-									<td>
-										<ul  class="menu small float-right">
-											<li><a class="hollow button tiny fi-pencil"></a></li>
-											<li style="margin-left: 2px;"><a class="hollow button tiny fi-x"></a></li>
-										</ul>
-									</td>
-								</tr>
-							</c:forEach>
-						</table>
+						
 					</div>
 					<hr>
 					<div class="row">
