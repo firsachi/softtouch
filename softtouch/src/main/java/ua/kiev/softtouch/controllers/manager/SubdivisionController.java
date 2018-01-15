@@ -51,8 +51,15 @@ public class SubdivisionController {
 	@GetMapping(value = "edit/{id}")
 	public ModelAndView edit(@PathVariable int id) {
 		ModelAndView model = new ModelAndView("form-subdivision-edit");
-		model.addObject("subdivision", subdivisionService.biId(id));
+		model.addObject("subdivision", subdivisionService.byId(id));
 		return model;
+	}
+	
+	@GetMapping(value = "disable/{id}")
+	public String disable(@PathVariable int id) {
+		SubdivisionModel model = subdivisionService.byId(id);
+		subdivisionService.disabele(model);
+		return "redirect:/manager/subdivision/";
 	}
 	
 	@RequestMapping(value = "update", method = RequestMethod.POST)

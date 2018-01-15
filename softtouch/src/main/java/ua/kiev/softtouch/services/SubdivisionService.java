@@ -9,6 +9,7 @@ import ua.kiev.model.dao.SubdivisionDao;
 import ua.kiev.softtouch.models.SubdivisionModel;
 
 @Service
+@Transactional
 public class SubdivisionService {
 	
 	@Autowired
@@ -36,13 +37,18 @@ public class SubdivisionService {
 	}
 
 	@Transactional
-	public Object biId(int id) {
+	public SubdivisionModel byId(int id) {
 		return subdivisionTransformer.entityModel(getDao().byId(id));
 	}
 
 	@Transactional
 	public void update(SubdivisionModel model) {
 		getDao().update(subdivisionTransformer.modelEntity(model));
+	}
+
+	public void disabele(SubdivisionModel model) {
+		model.setDisable(true);
+		update(model);
 	}
 
 }
