@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
@@ -56,5 +58,20 @@ public class AppMvcConfig extends WebMvcConfigurerAdapter{
 		resolver.setCookieName("myLocaleCookie");
 		resolver.setCookieMaxAge(4800);
 		return resolver;
+	}
+	
+	@Bean(name = "validationMessageSource")
+	public ReloadableResourceBundleMessageSource validationMessageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        messageSource.setBasename("classpath:i18n/validation");
+        messageSource.setCacheSeconds(10);
+        return messageSource;
+	}
+	
+	@Override
+	public Validator getValidator()  {
+		LocalValidatorFactoryBean validator = new LocalValidatorFactoryBean();
+		validator.setValidationMessageSource((MessageSource) validationMessageSource());
+		return validator;
 	}
 }

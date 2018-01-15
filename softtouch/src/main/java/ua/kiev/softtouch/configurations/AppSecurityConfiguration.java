@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import ua.kiev.softtouch.service.ServiceAuthenticationProvider;
+import ua.kiev.softtouch.services.ServiceAuthenticationProvider;
 
 @Configuration
 @EnableWebSecurity
