@@ -29,7 +29,8 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter{
         http
             .authorizeRequests()
             	.antMatchers("/", "/home", "/resources/**").permitAll()
-            	.antMatchers("/cabinet/**").access("hasAuthority('costumer')")
+            	.antMatchers("/cabinet/**").hasAuthority("COSTYMER")
+            	.antMatchers("/manager/**").hasAuthority("MANAGER")
             	.anyRequest().authenticated()
                 .and()
             .formLogin()
