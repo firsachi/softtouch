@@ -2,6 +2,9 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+				<div class="off-canvas left-panel position-left reveal-for-large" id="my-info" data-off-canvas="" data-position="left" aria-hidden="true" data-offcanvas="3rv0tb-offcanvas">	
+					<div class="row column">
 					<br>
 					<ul class="vertical menu">
 						<li>
@@ -23,4 +26,7 @@
 							</a>
 						</li>
 					</ul>
+					</div>
+				</div>
+					
 			

@@ -1,1 +1,14 @@
-
+.position-left.is-transition-push{
+		
+}
+.off-canvas{
+	
+}
+.left-panel{
+	background-color: #2C3840;
+	box-shadow: none;
+}
+.title-manager{
+	background: white;
+	border-bottom: 1px solid #cacaca;
+}

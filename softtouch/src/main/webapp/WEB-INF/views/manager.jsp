@@ -14,11 +14,7 @@
 		<div class="off-canvas-wrapper">
 			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
 			
-				<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas="" data-position="left" aria-hidden="true" data-offcanvas="3rv0tb-offcanvas">	
-					<div class="row column">
-						<%@include file="../jsp/menu-left-manager.jsp" %>
-					</div>
-				</div>
+				<%@include file="../jsp/menu-left-manager.jsp" %>
 				
 				<div class="off-canvas-content" data-off-canvas-content="">
 					
