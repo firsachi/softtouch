@@ -1,4 +1,4 @@
-package ua.kiev.softtouch.services;
+package ua.kiev.softtouch.transformers;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ import ua.kiev.model.entities.Subdivision;
 import ua.kiev.softtouch.models.CompanyModel;
 
 @Component
-public class ComapnyTransformer {
+public class ComapnyTransformer implements BaseTransformers<CompanyModel, Company>{
 
 	public Company modelEntity(CompanyModel model) {
 		Company company = new Company();
