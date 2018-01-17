@@ -1,4 +1,4 @@
-package ua.kiev.softtouch.services;
+package ua.kiev.softtouch.transformers;
 
 import org.springframework.stereotype.Component;
 
@@ -6,7 +6,7 @@ import ua.kiev.model.entities.Subdivision;
 import ua.kiev.softtouch.models.SubdivisionModel;
 
 @Component
-public class SubdivisionTransformer {
+public class SubdivisionTransformer implements BaseTransformers<SubdivisionModel, Subdivision>{
 	
 	public SubdivisionModel entityModel(Subdivision entity) {
 		SubdivisionModel model = new SubdivisionModel();
