@@ -6,7 +6,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ua.kiev.model.dao.CompanyDao;
 import ua.kiev.model.dao.DaoFactory;
+import ua.kiev.model.entities.Company;
 import ua.kiev.softtouch.models.CompanyModel;
+import ua.kiev.softtouch.transformers.BaseTransformers;
 
 @Service
 public class CompanyService {
@@ -15,7 +17,7 @@ public class CompanyService {
 	private DaoFactory daoFactory;
 	
 	@Autowired
-	private ComapnyTransformer comapnyTransformer;
+	private BaseTransformers<CompanyModel, Company> comapnyTransformer;
 	
 	public CompanyDao getDao() {
 		return daoFactory.createCompanyDao();

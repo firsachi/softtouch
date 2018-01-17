@@ -6,7 +6,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ua.kiev.model.dao.DaoFactory;
 import ua.kiev.model.dao.SubdivisionDao;
+import ua.kiev.model.entities.Subdivision;
 import ua.kiev.softtouch.models.SubdivisionModel;
+import ua.kiev.softtouch.transformers.BaseTransformers;
 
 @Service
 @Transactional
@@ -16,7 +18,7 @@ public class SubdivisionService {
 	private DaoFactory daoFactory;
 	
 	@Autowired
-	private SubdivisionTransformer subdivisionTransformer;
+	private BaseTransformers<SubdivisionModel, Subdivision> subdivisionTransformer;
 	
 	public SubdivisionDao getDao() {
 		return daoFactory.createSubdivisionDao();
