@@ -43,3 +43,43 @@
 							<form:input path="username" placeholder="${messagename}"/>
 						</div>
 					</div>
+					
+					<div class="row">
+						<div class="small-4 columns">
+							<form:label path="lastname" class="text-right middle">
+								<spring:message code="form.user.lastname"/>
+							</form:label>
+						</div>
+						<div  class="small-8 columns">
+							<spring:message   code="form.subdivision.messagename" var="messagename"/>
+							<form:errors path="lastname" cssClass="twelve columns label alert" element="span"/>
+							<form:input path="lastname" placeholder="${messagename}"/>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="small-4 columns">
+							<form:label path="idSubdivision" class="text-right middle">
+								<spring:message code="form.user.lastname"/>
+							</form:label>
+						</div>
+						<div  class="small-8 columns">
+							<spring:message   code="form.subdivision.messagename" var="messagename"/>
+							<form:errors path="idSubdivision" cssClass="twelve columns label alert" element="span"/>
+							<form:select path="idSubdivision" items="${subdivisions}" itemValue="id" itemLabel="name"/>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="small-4 columns">
+							<form:label path="idRole" class="text-right middle">
+								<spring:message code="form.user.lastname"/>
+							</form:label>
+						</div>
+						<div  class="small-8 columns">
+							<spring:message   code="form.subdivision.messagename" var="messagename"/>
+							<form:errors path="idRole" cssClass="twelve columns label alert" element="span"/>
+							<form:select path="idRole" items="${subdivisions}" itemValue="id" itemLabel="name"/>
+						</div>
+					</div>
+					
