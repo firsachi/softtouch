@@ -28,12 +28,12 @@ public class UserController {
 	@RequestMapping(value = "add")
 	public String submit(Model model) {
 		model.addAttribute("user", new FullUserModel());
-		initSubdivision(model);
+		initSubdivision(model, false);
 		return "form-user-add";
 	}
 	
-	private void initSubdivision(Model model) {
-		model.addAttribute("subdivisions", daoFactory.createSubdivisionDao().getAll());
+	private void initSubdivision(Model model, boolean disable) {
+		model.addAttribute("companies", daoFactory.createCompanyDao().getResultList(disable));
 	}
 }
 

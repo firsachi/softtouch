@@ -5,14 +5,15 @@
 
 					<form:hidden path="id"/>
 
+					<!-- firstname -->
 					<div class="row">
 						<div class="small-4 columns">
 							<form:label path="firstname" class="text-right middle">
-								<spring:message code="form.user.firstname"/>
+								<spring:message code="inputs.firstname"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">
-							<spring:message   code="form.subdivision.messagename" var="messagename"/>
+							<spring:message   code="message.firstname" var="messagename"/>
 							<form:errors path="firstname" cssClass="twelve columns label alert" element="span"/>
 							<form:input path="firstname" placeholder="${messagename}"/>
 						</div>
@@ -34,7 +35,7 @@
 					<div class="row">
 						<div class="small-4 columns">
 							<form:label path="username" class="text-right middle">
-								<spring:message code="form.user.lastname"/>
+								<spring:message code="form.user.username"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">
@@ -66,7 +67,7 @@
 						<div  class="small-8 columns">
 							<spring:message   code="form.subdivision.messagename" var="messagename"/>
 							<form:errors path="idSubdivision" cssClass="twelve columns label alert" element="span"/>
-							<form:select path="idSubdivision" items="${subdivisions}" itemValue="id" itemLabel="name"/>
+							<form:select path="idSubdivision" items="${companies}" itemValue="id" itemLabel="comapanyName"/>
 						</div>
 					</div>
 					

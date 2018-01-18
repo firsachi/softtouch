@@ -34,7 +34,7 @@ public class CompanyController {
 	@RequestMapping
 	@Transactional
 	public String pageCompany(Model model) {
-		model.addAttribute("companies", companyService.getDao().getResultList());
+		model.addAttribute("companies", companyService.getDao().getResultList(false));
 		return "company";
 	}
 	
