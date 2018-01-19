@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html class="" lang="en">
 	
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Foundation | Welcome</title>
+		
+		<title><spring:message code="form.user.title"/></title>
 		<%@include file="../jsp/link-css.jsp" %>
 	</head>
 	
@@ -28,7 +30,7 @@
 					
 					<%@include file="../jsp/title-manager.jsp" %>
 					
-					<div class="row small-up-2 medium-up-3 large-up-4 large-12">
+				
 						<table>
 							<tr>
 								<th><spring:message code="table.number"/></th>
@@ -54,14 +56,7 @@
 								</tr>
 							</c:forEach>
 						</table>
-					</div>
-					<hr>
-					<div class="row">
-						
-					</div>
-					<div class="js-off-canvas-exit">
-					</div>
-				</div>
+
 			</div>
 		</div>
 		<%@include file="../jsp/map-js.jsp" %>

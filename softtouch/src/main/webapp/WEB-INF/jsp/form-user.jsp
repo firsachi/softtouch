@@ -18,50 +18,53 @@
 							<form:input path="firstname" placeholder="${messagename}"/>
 						</div>
 					</div>
-					
+					<!-- lastname -->
 					<div class="row">
 						<div class="small-4 columns">
 							<form:label path="lastname" class="text-right middle">
-								<spring:message code="form.user.lastname"/>
+								<spring:message code="inputs.lastname"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">
-							<spring:message   code="form.subdivision.messagename" var="messagename"/>
+							<spring:message   code="message.lastname" var="messagename"/>
 							<form:errors path="lastname" cssClass="twelve columns label alert" element="span"/>
 							<form:input path="lastname" placeholder="${messagename}"/>
 						</div>
 					</div>
 					
+					<!-- password -->
 					<div class="row">
 						<div class="small-4 columns">
-							<form:label path="username" class="text-right middle">
-								<spring:message code="form.user.username"/>
+							<form:label path="password" class="text-right middle">
+								<spring:message code="inputs.password"/>
+							</form:label>
+						</div>
+						<div  class="small-8 columns">
+							<spring:message   code="message.password" var="messagename"/>
+							<form:errors path="password" cssClass="twelve columns label alert" element="span"/>
+							<form:input path="password" placeholder="${messagename}"/>
+						</div>
+					</div>
+					
+					<!-- repeatPassword -->
+					<div class="row">
+						<div class="small-4 columns">
+							<form:label path="repeatPassword" class="text-right middle">
+								<spring:message code="inputs.repeatPassword"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">
 							<spring:message   code="form.subdivision.messagename" var="messagename"/>
-							<form:errors path="username" cssClass="twelve columns label alert" element="span"/>
-							<form:input path="username" placeholder="${messagename}"/>
+							<form:errors path="repeatPassword" cssClass="twelve columns label alert" element="span"/>
+							<form:input path="repeatPassword" placeholder="${messagename}"/>
 						</div>
 					</div>
 					
-					<div class="row">
-						<div class="small-4 columns">
-							<form:label path="lastname" class="text-right middle">
-								<spring:message code="form.user.lastname"/>
-							</form:label>
-						</div>
-						<div  class="small-8 columns">
-							<spring:message   code="form.subdivision.messagename" var="messagename"/>
-							<form:errors path="lastname" cssClass="twelve columns label alert" element="span"/>
-							<form:input path="lastname" placeholder="${messagename}"/>
-						</div>
-					</div>
-					
+					<!-- subdivision -->
 					<div class="row">
 						<div class="small-4 columns">
 							<form:label path="idSubdivision" class="text-right middle">
-								<spring:message code="form.user.lastname"/>
+								<spring:message code="inputs.subdivision"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">
@@ -71,10 +74,11 @@
 						</div>
 					</div>
 					
+					<!-- role -->
 					<div class="row">
 						<div class="small-4 columns">
 							<form:label path="idRole" class="text-right middle">
-								<spring:message code="form.user.lastname"/>
+								<spring:message code="inputs.role"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">

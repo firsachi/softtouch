@@ -6,6 +6,10 @@ public class FullUserModel extends UserModel{
 	
 	private String lastname;
 	
+	private String password;
+	
+	private String repeatPassword;
+
 	private int idSubdivision;
 	
 	private int idRole;
@@ -24,6 +28,22 @@ public class FullUserModel extends UserModel{
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRepeatPassword() {
+		return repeatPassword;
+	}
+
+	public void setRepeatPassword(String repeatPassword) {
+		this.repeatPassword = repeatPassword;
 	}
 
 	public int getIdSubdivision() {
