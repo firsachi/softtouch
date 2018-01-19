@@ -8,7 +8,7 @@
 					<div class="row">
 						<div class="small-4 columns">
 							<form:label path="name" class="text-right middle">
-								<spring:message code="form.subdivision.name"/>
+								<spring:message code="inputs.subdivision"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">

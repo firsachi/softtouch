@@ -27,15 +27,6 @@
 					
 					<%@include file="../jsp/title-manager.jsp" %>
 					
-					<div class="row small-up-2 medium-up-3 large-up-4">
-						
-					</div>
-					<hr>
-					<div class="row">
-						
-					</div>
-					<div class="js-off-canvas-exit">
-					</div>
 				</div>
 			</div>
 		</div>

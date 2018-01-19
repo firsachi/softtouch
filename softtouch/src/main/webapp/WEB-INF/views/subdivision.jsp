@@ -27,7 +27,7 @@
 					
 					<%@include file="../jsp/title-manager.jsp" %>
 					
-					<div class="row small-up-2 medium-up-3 large-up-4 large-12">
+					
 						<table>
 							<tr>
 								<th><spring:message code="table.number"/></th>
@@ -52,14 +52,7 @@
 								</tr>
 							</c:forEach>
 						</table>
-					</div>
-					<hr>
-					<div class="row">
-						
-					</div>
-					<div class="js-off-canvas-exit">
-					</div>
-				</div>
+					
 			</div>
 		</div>
 		<%@include file="../jsp/map-js.jsp" %>
