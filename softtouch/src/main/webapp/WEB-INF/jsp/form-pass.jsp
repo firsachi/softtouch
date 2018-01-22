@@ -13,7 +13,7 @@
 						<div  class="small-8 columns">
 							<spring:message   code="message.password" var="messagename"/>
 							<form:errors path="password" cssClass="twelve columns label alert" element="span"/>
-							<form:input path="password" placeholder="${messagename}"/>
+							<form:password path="password" placeholder="${messagename}"/>
 						</div>
 					</div>
 					
@@ -25,9 +25,9 @@
 							</form:label>
 						</div>
 						<div  class="small-8 columns">
-							<spring:message   code="form.subdivision.messagename" var="messagename"/>
+							<spring:message   code="message.repeatpassword" var="messagename"/>
 							<form:errors path="repeatPassword" cssClass="twelve columns label alert" element="span"/>
-							<form:input path="repeatPassword" placeholder="${messagename}"/>
+							<form:password path="repeatPassword" placeholder="${messagename}"/>
 						</div>
 					</div>
 					

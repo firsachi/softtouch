@@ -22,6 +22,7 @@
 					</div>
 					<hr>
 					<%@include file="../jsp/form-user.jsp" %>
+					<%@include file="../jsp/form-pass.jsp" %>
 					<%@include file="../jsp/form-buttons.jsp" %>	
 				</form:form>
 			</div>

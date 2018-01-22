@@ -7,13 +7,26 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<spring:message code="form.user.titleadd" var="title"/>
+		<spring:message code="form.user.titleedit" var="title"/>
 		<title>${title}</title>
 		<%@include file="../jsp/link-css.jsp" %>
 	</head>
 	
 	<body>
 		<br>
+		<div class="row">
+			<div class="small-12 medium-12 large-6 large-centered columns">
+				<form:form method="post" action="save" modelAttribute="user">
+					<div class="text-center">
+						<h4>${title}</h4>
+					</div>
+					<hr>
+					<%@include file="../jsp/form-user.jsp" %>
+					<%@include file="../jsp/form-buttons.jsp" %>	
+				</form:form>
+			</div>
+		</div>
+		
 		<div class="row">
 			<div class="small-12 medium-12 large-6 large-centered columns">
 				<form:form method="post" action="save" modelAttribute="user">

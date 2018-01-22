@@ -18,6 +18,7 @@
 							<form:input path="firstname" placeholder="${messagename}"/>
 						</div>
 					</div>
+					
 					<!-- lastname -->
 					<div class="row">
 						<div class="small-4 columns">
@@ -32,19 +33,31 @@
 						</div>
 					</div>
 					
-					<%@include file="../jsp/form-pass.jsp" %>
-					
-					<!-- subdivision -->
+					<!-- login -->
 					<div class="row">
 						<div class="small-4 columns">
-							<form:label path="idSubdivision" class="text-right middle">
+							<form:label path="username" class="text-right middle">
+								<spring:message code="inputs.login"/>
+							</form:label>
+						</div>
+						<div  class="small-8 columns">
+							<spring:message   code="message.login" var="messagename"/>
+							<form:errors path="username" cssClass="twelve columns label alert" element="span"/>
+							<form:input path="username" placeholder="${messagename}"/>
+						</div>
+					</div>
+					
+					<!-- company -->
+					<div class="row">
+						<div class="small-4 columns">
+							<form:label path="idCompany" class="text-right middle">
 								<spring:message code="inputs.subdivision"/>
 							</form:label>
 						</div>
 						<div  class="small-8 columns">
 							<spring:message   code="form.subdivision.messagename" var="messagename"/>
-							<form:errors path="idSubdivision" cssClass="twelve columns label alert" element="span"/>
-							<form:select path="idSubdivision" items="${companies}" itemValue="id" itemLabel="comapanyName"/>
+							<form:errors path="idCompany" cssClass="twelve columns label alert" element="span"/>
+							<form:select path="idCompany" items="${companies}" itemValue="id" itemLabel="comapanyName"/>
 						</div>
 					</div>
 					

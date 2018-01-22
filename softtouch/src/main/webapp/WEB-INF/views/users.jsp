@@ -14,19 +14,12 @@
 	
 	<body>
 		<div class="off-canvas-wrapper">
-			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="canvas-content">
 			
 				<%@include file="../jsp/menu-left-manager.jsp" %>
 				
 				
-				<div class="off-canvas-content" data-off-canvas-content="">
-					
-					<div class="title-bar hide-for-large">
-						<div class="title-bar-left">
-							<button class="menu-icon" type="button" data-open="my-info" aria-expanded="false" aria-controls="my-info"></button>
-							<span class="title-bar-title">Mike Mikerson</span>
-						</div>
-					</div>
+				<div class="off-canvas-content" data-off-canvas-content="canvas-content">
 					
 					<%@include file="../jsp/title-manager.jsp" %>
 					
@@ -45,7 +38,7 @@
 							<c:forEach var="user" items="${users}" varStatus="counter">
 								<tr>
 									<td>${counter.index + 1}</td>
-									<td>${user.username}</td>
+									<td>${user.firstname} ${user.lastname}</td>
 									<td>${user.getCompany().comapanyName}</td>
 									<td>
 										<ul  class="menu small float-right">

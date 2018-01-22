@@ -30,7 +30,7 @@ public class UserBaseService implements UserDetailsService{
 			UserAutentificationModel moedl = new UserAutentificationModel();
 			moedl.setUsername(user.getUsername());
 			moedl.setPassword(user.getPassword());
-			List<GrantedAuthority> role = user.getRole().stream().map(r ->  new Role(r.getNameRole().name())).collect(Collectors.toList());
+			List<GrantedAuthority> role = user.getRoles().stream().map(r ->  new Role(r.getNameRole().name())).collect(Collectors.toList());
 			System.out.println(role.get(0).getAuthority() + "\n");
 			moedl.setSuthorities(role);
 			return moedl;

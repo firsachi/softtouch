@@ -1,14 +1,24 @@
-.position-left.is-transition-push{
-		
-}
-.off-canvas{
-	
-}
 .left-panel{
 	background-color: #2C3840;
 	box-shadow: none;
 }
 .title-manager{
 	background: white;
-	border-bottom: 1px solid #cacaca;
+	border-bottom: 1px solid #727272;
 }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #727272; }
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #727272; }
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #727272; }
+
+input::placeholder,
+textarea::placeholder {
+  color: #727272; }

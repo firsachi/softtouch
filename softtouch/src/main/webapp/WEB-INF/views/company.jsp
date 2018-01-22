@@ -17,14 +17,7 @@
 				<%@include file="../jsp/menu-left-manager.jsp" %>
 				
 				<div class="off-canvas-content" data-off-canvas-content="">
-					
-					<div class="title-bar hide-for-large">
-						<div class="title-bar-left">
-							<button class="menu-icon" type="button" data-open="my-info" aria-expanded="false" aria-controls="my-info"></button>
-							<span class="title-bar-title">Mike Mikerson</span>
-						</div>
-					</div>
-					
+													
 					<%@include file="../jsp/title-manager.jsp" %>
 					
 						<table>
