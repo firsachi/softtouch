@@ -10,11 +10,8 @@ public class UserTransformer implements BaseTransformers<UserModel, User>{
 
 	@Override
 	public UserModel entityModel(User entity) {
-		UserModel model = new UserModel();
-		model.setId(entity.getId());
-		model.setCompanyname(entity.getCompany().getComapanyName());
-		model.setDisable(entity.isDisable());
-		return model;
+		
+		return null;
 	}
 
 	@Override

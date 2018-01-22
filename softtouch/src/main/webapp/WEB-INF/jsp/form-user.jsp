@@ -32,33 +32,7 @@
 						</div>
 					</div>
 					
-					<!-- password -->
-					<div class="row">
-						<div class="small-4 columns">
-							<form:label path="password" class="text-right middle">
-								<spring:message code="inputs.password"/>
-							</form:label>
-						</div>
-						<div  class="small-8 columns">
-							<spring:message   code="message.password" var="messagename"/>
-							<form:errors path="password" cssClass="twelve columns label alert" element="span"/>
-							<form:input path="password" placeholder="${messagename}"/>
-						</div>
-					</div>
-					
-					<!-- repeatPassword -->
-					<div class="row">
-						<div class="small-4 columns">
-							<form:label path="repeatPassword" class="text-right middle">
-								<spring:message code="inputs.repeatPassword"/>
-							</form:label>
-						</div>
-						<div  class="small-8 columns">
-							<spring:message   code="form.subdivision.messagename" var="messagename"/>
-							<form:errors path="repeatPassword" cssClass="twelve columns label alert" element="span"/>
-							<form:input path="repeatPassword" placeholder="${messagename}"/>
-						</div>
-					</div>
+					<%@include file="../jsp/form-pass.jsp" %>
 					
 					<!-- subdivision -->
 					<div class="row">
@@ -84,7 +58,8 @@
 						<div  class="small-8 columns">
 							<spring:message   code="form.subdivision.messagename" var="messagename"/>
 							<form:errors path="idRole" cssClass="twelve columns label alert" element="span"/>
-							<form:select path="idRole" items="${subdivisions}" itemValue="id" itemLabel="name"/>
+							<form:select path="idRole" items="${roles}" itemValue="id" itemLabel="nameRole">	
+							</form:select>
 						</div>
 					</div>
 					

@@ -46,11 +46,11 @@
 								<tr>
 									<td>${counter.index + 1}</td>
 									<td>${user.username}</td>
-									<td>${user.companyname}</td>
+									<td>${user.getCompany().comapanyName}</td>
 									<td>
 										<ul  class="menu small float-right">
-											<li><a href="/softtouch/manager/subdivision/edit/${subdivision.id}" class="hollow button tiny fi-pencil"></a></li>
-											<li style="margin-left: 2px;"><a href="/softtouch/manager/subdivision/disable/${subdivision.id}" class="alert hollow button tiny fi-x"></a></li>
+											<li><a href="/softtouch/manager/users/edit/${user.id}" class="hollow button tiny fi-pencil"></a></li>
+											<li style="margin-left: 2px;"><a href="/softtouch/manager/users/disable/${user.id}" class="alert hollow button tiny fi-x"></a></li>
 										</ul>
 									</td>
 								</tr>

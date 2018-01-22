@@ -1,8 +1,6 @@
 package ua.kiev.softtouch.services;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,12 +26,13 @@ public class UserService {
 	}
 
 	@Transactional
-	public List<UserModel> getAll() {
-		List<UserModel> lResult = new ArrayList<>();
-		lResult = getDao().getAll().stream()
-				.map(entity -> userTransformer.entityModel(entity))
-				.collect(Collectors.toList());
-		return lResult;
+	public List<User> getAll() {
+		return daoFactory.createUserDaoImpl().getAll();
+	}
+
+	@Transactional
+	public Object byId(int id) {
+		return userTransformer.entityModel(daoFactory.createUserDaoImpl().byId(id));
 	}
 	
 	
