@@ -7,7 +7,7 @@
 						<div class="small-12 columns">
 						
 							<div class="expanded button-group">
-								<a class="hollow button" href=".">
+								<a class="hollow button" href="<c:out value="${urlback}"/>">
 									<spring:message code="buttons.back" />
 								</a>
 								<button type="reset" class="hollow button">

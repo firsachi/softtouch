@@ -15,16 +15,15 @@
 	<body>
 		<br>
 		<div class="row">
-			<div class="small-12 medium-12 large-6 large-centered columns">
-				<form:form method="post" action="save" modelAttribute="subdivision">
-					<div class="text-center">
-						<h4>${title}</h4>
-					</div>
-					<hr>
-					<%@include file="../jsp/form-subdivision.jsp" %>
-					<%@include file="../jsp/form-buttons.jsp" %>	
-				</form:form>
-			</div>
+			<form:form method="post" action="save" modelAttribute="subdivision">
+				<div class="text-center">
+					<h4>${title}</h4>
+				</div>
+				<hr>
+				<%@include file="../jsp/form-subdivision.jsp" %>
+				<c:url var="urlback" value="/manager/subdivision/"/>
+				<%@include file="../jsp/form-buttons.jsp" %>	
+			</form:form>
 		</div>
 
 		<script async="" src="https://www.google-analytics.com/analytics.js"></script>

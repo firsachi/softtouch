@@ -15,31 +15,45 @@
 	<body>
 		<br>
 		<div class="row">
-			<div class="small-12 medium-12 large-6 large-centered columns">
-				<form:form method="post" action="save" modelAttribute="user">
-					<div class="text-center">
-						<h4>${title}</h4>
-					</div>
-					<hr>
-					<%@include file="../jsp/form-user.jsp" %>
-					<%@include file="../jsp/form-buttons.jsp" %>	
-				</form:form>
+			<div class="text-center">
+				<h4>${title}</h4>
 			</div>
+			<hr>
 		</div>
-		
 		<div class="row">
-			<div class="small-12 medium-12 large-6 large-centered columns">
-				<form:form method="post" action="save" modelAttribute="user">
-					<div class="text-center">
-						<h4>${title}</h4>
-					</div>
-					<hr>
-					<%@include file="../jsp/form-user.jsp" %>
-					<%@include file="../jsp/form-buttons.jsp" %>	
-				</form:form>
-			</div>
+			<c:url var="urlback" value="/manager/users/"/>
+			<ul class="accordion" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" id="deeplinked-accordion">
+  				<li class="accordion-item is-active" data-accordion-item>
+    				<a class="accordion-title"><spring:message code="form.user.edit"/></a>
+    				<div class="accordion-content" data-tab-content id="deeplink1">
+      					<form:form method="post" action="save" modelAttribute="user">
+							<%@include file="../jsp/form-user.jsp" %>
+							<%@include file="../jsp/form-buttons.jsp" %>	
+						</form:form>
+    				</div>
+  				</li>
+  				
+  				<li class="accordion-item" data-accordion-item>
+  					<a class="accordion-title"><spring:message code="form.user.editpassword"/></a>
+  					<div class="accordion-content" data-tab-content id="deeplink2">
+  						<form:form method="post" action="save" modelAttribute="user">
+							<%@include file="../jsp/form-pass.jsp" %>
+							<hr>
+							
+							
+						
+							<%@include file="../jsp/form-buttons.jsp"%>
+						</form:form>
+  					</div>
+  				</li>
+  			</ul>
 		</div>
 
+		<%@include file="../jsp/map-js.jsp" %>
+
+		<script>
+			$(document).foundation();
+		</script>
 		<script async="" src="https://www.google-analytics.com/analytics.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
