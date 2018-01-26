@@ -22,7 +22,6 @@ public class CpmpanyValidator implements Validator{
 
 	@Override
 	public void validate(Object model, Errors errors) {
-		
 		ValidationUtils.rejectIfEmpty(errors, "comanyname", "error.null");
 		CompanyModel companyModel =  (CompanyModel) model;
 		String companyname = companyModel.getComanyname();

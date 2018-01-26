@@ -35,7 +35,7 @@
 					
 					<c:forEach var="subdivision" items="${subdivisions}">
 					<li class="accordion-item" data-accordion-item>
-						<a class="accordion-title">${subdivision.name}</a>
+						<a class="accordion-title"><h6>${subdivision.name}</h6></a>
 						
 						<div class="accordion-content" data-tab-content>
 							
@@ -53,6 +53,7 @@
 			</div>
 			<div class="smail-12 large-4 columns">
 				<%@include file="../jsp/form-login.jsp" %>
+				<hr>
 			</div>
 		</div>
 

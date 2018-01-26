@@ -14,7 +14,7 @@ public class RouteController {
 	public String cabinet(Authentication authentication) {
 		;
 		for(GrantedAuthority grantedAuthority: authentication.getAuthorities()) {
-			if(grantedAuthority.getAuthority().equals("COSTYMER")) {
+			if(grantedAuthority.getAuthority().equals("CUSTOMER")) {
 				return "redirect:cabinet";
 			}
 			else if (grantedAuthority.getAuthority().equals("MANAGER")) {

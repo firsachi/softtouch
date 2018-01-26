@@ -24,9 +24,9 @@
 			<c:url var="urlback" value="/manager/users/"/>
 			<ul class="accordion" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" id="deeplinked-accordion">
   				<li class="accordion-item is-active" data-accordion-item>
-    				<a class="accordion-title"><spring:message code="form.user.edit"/></a>
+    				<a class="accordion-title"><h5><spring:message code="form.user.edit"/></h5></a>
     				<div class="accordion-content" data-tab-content id="deeplink1">
-      					<form:form method="post" action="save" modelAttribute="user">
+      					<form:form method="post" action="/softtouch/manager/users/update/" modelAttribute="user">
 							<%@include file="../jsp/form-user.jsp" %>
 							<%@include file="../jsp/form-buttons.jsp" %>	
 						</form:form>
@@ -34,14 +34,10 @@
   				</li>
   				
   				<li class="accordion-item" data-accordion-item>
-  					<a class="accordion-title"><spring:message code="form.user.editpassword"/></a>
+  					<a class="accordion-title"><h5><spring:message code="form.user.editpassword"/></h5></a>
   					<div class="accordion-content" data-tab-content id="deeplink2">
-  						<form:form method="post" action="save" modelAttribute="user">
+  						<form:form method="post" action="/softtouch/manager/users/updatepass/" modelAttribute="user">
 							<%@include file="../jsp/form-pass.jsp" %>
-							<hr>
-							
-							
-						
 							<%@include file="../jsp/form-buttons.jsp"%>
 						</form:form>
   					</div>
