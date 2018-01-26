@@ -21,6 +21,8 @@ public class UserAutentificationModel implements UserDetails{
 	
 	private String companyName;
 	
+	private boolean accountNonLocked;
+	
 	private List<? extends GrantedAuthority> suthorities;
 	
 	public String getCompanyName() {
@@ -44,7 +46,7 @@ public class UserAutentificationModel implements UserDetails{
 
 	@Override
 	public boolean isAccountNonExpired() {
-		return false;
+		return accountNonLocked;
 	}
 
 	@Override
@@ -77,4 +79,8 @@ public class UserAutentificationModel implements UserDetails{
 	public void setSuthorities(List<GrantedAuthority> suthorities) {
 		this.suthorities = suthorities;
 	}
+
+	public void setAccountNonLocked(boolean accountNonLocked) {
+		this.accountNonLocked = accountNonLocked;
+	}	
 }

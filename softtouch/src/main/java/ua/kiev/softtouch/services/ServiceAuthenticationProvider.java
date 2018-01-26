@@ -34,6 +34,10 @@ public class ServiceAuthenticationProvider implements AuthenticationProvider {
 			throw new BadCredentialsException("Username not found.");
 		}
 		
+		if(user.isAccountNonExpired()) {
+			throw new BadCredentialsException("User is disabled");
+		}
+		
 		return new UsernamePasswordAuthenticationToken(user, password, user.getAuthorities());
 	}
 

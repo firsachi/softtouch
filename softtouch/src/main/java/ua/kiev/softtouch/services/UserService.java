@@ -3,6 +3,7 @@ package ua.kiev.softtouch.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,12 +32,21 @@ public class UserService {
 	}
 
 	@Transactional
-	public Object byId(int id) {
+	public UserModel byId(int id) {
 		return userTransformer.entityModel(daoFactory.createUserDaoImpl().byId(id));
 	}
-	
-	
-	
+
+	@Transactional
+	public void save(UserModel userModel) {
+		Md5PasswordEncoder md = new Md5PasswordEncoder();
+		userModel.setPassword(md.encodePassword(userModel.getPassword(), null));
+		getDao().create(userTransformer.modelEntity(userModel));
+	}
+
+	@Transactional
+	public void update(UserModel userModel) {
+		getDao().update(userTransformer.modelEntity(userModel));
+	}
 	
 
 }

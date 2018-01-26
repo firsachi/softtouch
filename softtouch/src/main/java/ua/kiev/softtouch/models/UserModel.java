@@ -5,13 +5,13 @@ public class UserModel {
 	private int id;
 	
 	private String username;
-	
+
 	private String firstname;
 	
 	private String lastname;
-	
+
 	private String password;
-	
+
 	private String repeatPassword;
 	
 	private int idCompany;
