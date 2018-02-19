@@ -17,7 +17,7 @@
 		<%@include file="../jsp/nav-cabinet.jsp" %>
 
 		<div class="row" id="content">
-			<div class="medium-8 columns">
+			<div class="large-8 columns">
 			
 			<div class="blog-post">
 					<h3>Антивірус</h3>
@@ -84,7 +84,7 @@
 			</div>
 	
 	
-			<div class="medium-4 columns sticky-container" data-sticky-container="" style="height: 322.8px;">
+			<div class="large-4 columns sticky-container" data-sticky-container="" style="height: 322.8px;">
 				<div class="sticky" data-sticky="wkslj9-sticky" data-anchor="content" data-resize="qhb8kc-sticky" style="max-width: 285px;" data-events="resize">
 					<h4>Програмне забезпечення</h4>
 					<ul>

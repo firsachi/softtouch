@@ -15,6 +15,9 @@ public class ServiceAuthenticationProvider implements AuthenticationProvider {
 	
 	@Autowired
 	private UserBaseService userBaseService;
+	
+	@Autowired 
+	private Md5PasswordEncoder md5Coder;
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -26,8 +29,8 @@ public class ServiceAuthenticationProvider implements AuthenticationProvider {
 				|| password.length() <= 5) {
 			throw new BadCredentialsException("Username not found.");
 		}
-		Md5PasswordEncoder md = new Md5PasswordEncoder();
-		password = md.encodePassword(password, null);
+		
+		password = md5Coder.encodePassword(password, null);
 
 		UserDetails user = userBaseService.loadUserByUsername(username);
 		if (null == user ) {

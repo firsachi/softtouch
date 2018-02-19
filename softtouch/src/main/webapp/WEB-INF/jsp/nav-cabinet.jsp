@@ -1,5 +1,11 @@
 <%@ page pageEncoding="UTF-8"%>
-			<nav class="top-bar topbar-responsive">
+
+			<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  				<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  				<div class="title-bar-title">Menu</div>
+			</div>
+	
+			<nav class="top-bar topbar-responsive" id="responsive-menu">
 				<div class="top-bar-left">
 					<ul class="menu">
 						<li style="color: #fefefe;" class="menu-text">${ costumer }</li>

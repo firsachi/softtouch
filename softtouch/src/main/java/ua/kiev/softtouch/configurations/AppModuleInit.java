@@ -6,6 +6,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleResolver;
@@ -20,6 +21,11 @@ public class AppModuleInit {
 	@Bean
 	public DaoFactory getDaoFactory() {
 		return new DaoFactoryImpl();
+	}
+	
+	@Bean
+	public Md5PasswordEncoder md5PasswordEncoder() {
+		return new Md5PasswordEncoder();
 	}
 	
 	@Bean

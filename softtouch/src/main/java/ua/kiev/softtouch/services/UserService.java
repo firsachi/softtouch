@@ -22,6 +22,10 @@ public class UserService {
 	@Autowired
 	private BaseTransformers<UserModel, User> userTransformer;
 	
+	public UserService() {
+		
+	}
+	
 	public UserDao getDao() {
 		return daoFactory.createUserDaoImpl();
 	}

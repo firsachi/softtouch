@@ -8,6 +8,7 @@ import java.util.Locale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ import ua.kiev.model.dao.SubdivisionDao;
 import ua.kiev.model.entities.Role;
 import ua.kiev.model.entities.RoleEnum;
 import ua.kiev.model.entities.Subdivision;
+import ua.kiev.softtouch.filldb.FirstUser;
 import ua.kiev.softtouch.models.UserAutentificationModel;
 
 /**
@@ -32,6 +34,10 @@ public class HomeController {
 	
 	@Autowired
 	private DaoFactory daoFactory;
+	
+	@Autowired
+	private Md5PasswordEncoder md5Encoder;
+
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -50,6 +56,9 @@ public class HomeController {
 				roleDao.create(new Role(value));
 			}
 		}
+		
+		FirstUser firstUser = new FirstUser();
+		firstUser.addFirstUser(daoFactory.createUserDaoImpl(), md5Encoder);
 		
 		String formattedDate = dateFormat.format(date);
 		

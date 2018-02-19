@@ -14,6 +14,7 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import ua.kiev.model.configurations.ModelConfiguration;
+
 import ua.kiev.softtouch.configurations.AppMvcConfig;
 import ua.kiev.softtouch.configurations.AppSecurityConfiguration;
 
@@ -28,6 +29,7 @@ public class Initializer implements WebApplicationInitializer{
 		ctx.register(ModelConfiguration.class);
 		servletContext.addListener(new ContextLoaderListener(ctx));
 		ctx.setServletContext(servletContext);
+		
 		Dynamic servlet = servletContext.addServlet("appServlet", new DispatcherServlet(ctx));
 		servlet.addMapping("/");
 		servlet.setLoadOnStartup(1);
@@ -39,7 +41,7 @@ public class Initializer implements WebApplicationInitializer{
 	    
         FilterRegistration.Dynamic security = servletContext.addFilter(BeanIds.SPRING_SECURITY_FILTER_CHAIN,new DelegatingFilterProxy());
         security.addMappingForUrlPatterns(null,false,"/*");
-	    
+        
 	}
 
 }
